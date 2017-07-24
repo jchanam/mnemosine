@@ -30,6 +30,7 @@ class Payment(models.Model):
     user = models.ForeignKey(AUTH_USER_MODEL)
     date = models.DateTimeField()
     paid = models.BooleanField()
+    active = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.season + " " + self.date + " " + self.user.verbose_name
